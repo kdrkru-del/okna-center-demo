@@ -1,2 +1,2 @@
-:HL["/okna-center-demo/_next/static/css/7f388280a9ac7df5.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"variants","param":null,"prefetchHints":4192,"slots":{"children":{"name":"frosted-glass","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"aTb6rYbsJdT21cMSvHZNj"}
+:HL["/okna-center-demo/_next/static/css/ca80e26c5da10001.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"variants","param":null,"prefetchHints":4192,"slots":{"children":{"name":"frosted-glass","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"zIsTed5dcXkxrazn8Ewc5"}
