@@ -1,2 +1,2 @@
-:HL["/okna-center-demo/_next/static/css/4c7919cdfa628c32.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"variants","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"1jvcEhrbJFAYVN5B48CLU"}
+:HL["/okna-center-demo/_next/static/css/705600b908c295b1.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"variants","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"TpbnW5rh_sw3H2FiObOBW"}
