@@ -109,28 +109,28 @@ export const ProblemSolution: React.FC = () => {
           </div>
 
           <div className="relative max-w-4xl mx-auto h-[300px] sm:h-[440px] rounded-2xl overflow-hidden select-none border border-gray-200 shadow-md">
-            {/* "After" Image (Base) */}
+            {/* "After" Image (Base) — реальное фото после монтажа термокоробов */}
             <img
-              src={getAssetUrl('images/projects/full_kfGX33dN.jpg')}
-              alt="После: Установленный термокороб"
+              src={getAssetUrl('images/projects/full_JV5OBZCS.jpg')}
+              alt="После: Установленный термокороб — белые чистые рамы комнатной температуры"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow">
               ПОСЛЕ: Бесшовный термокороб
             </div>
 
-            {/* "Before" Image (Clipped) */}
+            {/* "Before" Image (Clipped) — конденсат и запотевшее стекло */}
             <div
               className="absolute inset-0 overflow-hidden"
               style={{ clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` }}
             >
               <img
-                src={getAssetUrl('images/projects/full_BLbAdewL.jpg')}
-                alt="До: Холодный промерзающий алюминиевый профиль"
+                src={getAssetUrl('images/projects/full_kfGX33dN.jpg')}
+                alt="До: Промерзающее запотевшее стекло с конденсатом"
                 className="absolute inset-0 w-full h-full object-cover filter contrast-110 brightness-90"
               />
               <div className="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow">
-                ДО: Ледяной металл, конденсат
+                ДО: Конденсат, лёд, промерзание
               </div>
             </div>
 

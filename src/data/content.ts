@@ -32,7 +32,7 @@ export const SERVICES: ServiceItem[] = [
       'Высококачественные полимерные материалы с терморазрывом',
       'Точная подгонка элементов и аккуратные стыки'
     ],
-    image: 'images/services/service1.jpg',
+    image: 'images/projects/c4a407dfcfd2b4c5832060ec67a0ae9d.jpg',
     badge: 'Собственный цех'
   },
   {
@@ -46,7 +46,7 @@ export const SERVICES: ServiceItem[] = [
       'Консультация по подбору геометрии для вашей профильной системы',
       'Прямая поставка без посредников'
     ],
-    image: 'images/services/service2.jpg',
+    image: 'images/projects/full_hZSjpVDV.jpg',
     badge: 'Прямая реализация'
   },
   {
@@ -60,7 +60,7 @@ export const SERVICES: ServiceItem[] = [
       'Аккуратная установка без грязи и строительного мусора',
       'Рамы становятся комнатной температуры на ощупь'
     ],
-    image: 'images/projects/full_kfGX33dN.jpg',
+    image: 'images/projects/full_JV5OBZCS.jpg',
     badge: 'Без посредников'
   }
 ];
@@ -71,14 +71,14 @@ export const PROJECTS: ProjectItem[] = [
     title: 'Панорамный фасад в новостройке',
     category: 'facade',
     categoryLabel: 'Панорамный фасад',
-    image: 'images/projects/full_kfGX33dN.jpg',
+    image: 'images/projects/full_JV5OBZCS.jpg',
     location: 'Владивосток',
     description: 'Ликвидация промерзания алюминиевой фасадной системы. В зимний период рамы сильно охлаждались и покрывались конденсатом. Установлены бесшовные термокороба в цвет интерьера.',
     specs: {
       beforeState: 'Промерзающий металлический каркас, конденсат',
       afterState: 'Рамы комнатной температуры, сухость и комфорт',
       profileType: 'Фасадная стоечно-ригельная система',
-      finish: 'Матовое графитовое ламинирование'
+      finish: 'Белый матовый термокороб'
     }
   },
   {
@@ -86,9 +86,9 @@ export const PROJECTS: ProjectItem[] = [
     title: 'Утепление угловой лоджии с сохранением вида',
     category: 'loggia',
     categoryLabel: 'Лоджия',
-    image: 'images/projects/full_r2AJqF0P.jpg',
+    image: 'images/projects/9f991d9ed587b3a675f00bdc4a683a48.jpg',
     location: 'Владивосток',
-    description: 'Устранение промерзания и сырости на лоджии. Монтаж термокоробов на вертикальные стойки и ригели с герметизацией примыканий.',
+    description: 'Устранение промерзания и сырости на угловой лоджии. Монтаж термокоробов на вертикальные стойки и ригели с герметизацией примыканий.',
     specs: {
       beforeState: 'Холодные рамы, сырость на подоконниках',
       afterState: 'Сухие рамы комнатной температуры, зона отдыха',
@@ -98,17 +98,17 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     id: '3',
-    title: 'Сложный фасадный узел и примыкание стоек',
-    category: 'details',
-    categoryLabel: 'Инженерный узел',
-    image: 'images/projects/full_PYc6ItTe.jpg',
+    title: 'Эркерное остекление — нестандартная геометрия',
+    category: 'facade',
+    categoryLabel: 'Панорамный фасад',
+    image: 'images/projects/3001f42c238b87e3fe216b7a3c6d4c88.jpg',
     location: 'Владивосток',
-    description: 'Изготовление термокоробов под нестандартную геометрию стоек. Плотное прилегание и отсечение мостиков холода без изменения внешнего вида здания.',
+    description: 'Изготовление термокоробов под скруглённую геометрию эркера. Плотное прилегание и отсечение мостиков холода без изменения внешнего вида здания.',
     specs: {
       beforeState: 'Мостики холода в угловых стыках',
       afterState: 'Герметичный термобарьер, аккуратные стыки',
-      profileType: 'Специальная форма профиля',
-      finish: 'Графитовая фактура'
+      profileType: 'Скруглённая эркерная система',
+      finish: 'Белый профиль'
     }
   },
   {
@@ -116,14 +116,14 @@ export const PROJECTS: ProjectItem[] = [
     title: 'Теплоизоляция витражного остекления большой площади',
     category: 'facade',
     categoryLabel: 'Панорамный фасад',
-    image: 'images/projects/full_1yEBIWqu.jpg',
+    image: 'images/projects/4e2b3511dabf8bcd506f5c35459025f3.jpg',
     location: 'Владивосток',
     description: 'Панорамные витражные рамы охлаждали помещение и резонировали от морского ветра. Термокороба вернули комфортную комнатную температуру.',
     specs: {
       beforeState: 'Ледяной металл, продувание по примыканиям',
       afterState: 'Теплый контур остекления, снижен шум с улицы',
       profileType: 'Витражная алюминиевая система',
-      finish: 'Темный матовый оттенок'
+      finish: 'Белый матовый термокороб'
     }
   },
   {
@@ -131,7 +131,7 @@ export const PROJECTS: ProjectItem[] = [
     title: 'Эстетическое обновление и тепловой барьер лоджии',
     category: 'loggia',
     categoryLabel: 'Лоджия',
-    image: 'images/projects/full_BLbAdewL.jpg',
+    image: 'images/projects/292d7f3037916aa4ad2e211609b91b1e.jpg',
     location: 'Владивосток',
     description: 'Термокороба не только защитили от холода, но и скрыли царапины и потертости на исходном алюминиевом каркасе от застройщика.',
     specs: {
@@ -148,12 +148,12 @@ export const PROJECTS: ProjectItem[] = [
     categoryLabel: 'Инженерный узел',
     image: 'images/projects/full_hZSjpVDV.jpg',
     location: 'Владивосток',
-    description: 'Аккуратная подгонка стыков термокоробов. Сохраняется геометрия панорамного остекления и архитектурные пропорции окна.',
+    description: 'Аккуратная подгонка стыков термокоробов различных форм и покрытий. Сохраняется геометрия панорамного остекления и архитектурные пропорции окна.',
     specs: {
       beforeState: 'Открытый алюминиевый ригель',
       afterState: 'Изолированный термокороб с терморазрывом',
       profileType: 'Стоечно-ригельный узел',
-      finish: 'Ламинация под текстуру дерева'
+      finish: 'Ламинация под текстуру дерева и белый'
     }
   }
 ];
