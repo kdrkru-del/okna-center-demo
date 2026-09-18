@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ProblemSolution } from './components/ProblemSolution';
+import { WhatToKnow } from './components/WhatToKnow';
 import { ServicesSection } from './components/ServicesSection';
+import { AboutCompany } from './components/AboutCompany';
 import { Calculator } from './components/Calculator';
 import { DiagnosticMethodology } from './components/DiagnosticMethodology';
 import { GallerySection } from './components/GallerySection';
@@ -45,7 +47,9 @@ export const App: React.FC = () => {
       <main className="flex-1">
         <Hero onOpenBooking={() => setBookingModalOpen(true)} />
         <ProblemSolution />
+        <WhatToKnow />
         <ServicesSection onSelectService={handleSelectService} />
+        <AboutCompany />
         <Calculator onApplyConfig={handleApplyConfig} />
         <DiagnosticMethodology />
         <GallerySection />

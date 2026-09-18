@@ -34,7 +34,9 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-1.5">
               <li><a href="#problem" className="hover:text-sky-600 transition-colors">О проблеме остекления</a></li>
+              <li><a href="#knowledge" className="hover:text-sky-600 transition-colors">Что нужно знать</a></li>
               <li><a href="#services" className="hover:text-sky-600 transition-colors">Услуги лаборатории</a></li>
+              <li><a href="#about" className="hover:text-sky-600 transition-colors">О компании</a></li>
               <li><a href="#calculator" className="hover:text-sky-600 transition-colors">Параметры остекления</a></li>
               <li><a href="#methodology" className="hover:text-sky-600 transition-colors">Инженерный регламент</a></li>
               <li><a href="#gallery" className="hover:text-sky-600 transition-colors">Галерея объектов</a></li>
@@ -50,7 +52,7 @@ export const Footer: React.FC = () => {
             <div className="space-y-2 text-gray-600">
               <p className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-sky-500 shrink-0 mt-0.5" />
-                <span>г. Владивосток, ул. Ильичева, дом 29</span>
+                <span>{COMPANY_INFO.address}</span>
               </p>
               <p className="flex items-start gap-2">
                 <Phone className="w-4 h-4 text-sky-500 shrink-0 mt-0.5" />
