@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, ThermometerSnowflake, CheckCircle2, Phone, Send, MessageSquare } from 'lucide-react';
+import { X, CheckCircle2, Phone, Send, MessageSquare, Square } from 'lucide-react';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -46,23 +46,25 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
     setSubmitted(true);
   };
 
-  const bookingMsg = `Запись на замер и тепловизионную диагностику (Окна-Центр, Владивосток):\nИмя: ${name}\nТелефон: ${phone}\nЖелаемая дата: ${date || 'в ближайшее время'}\nАдрес/район: ${address || 'уточняется'}`;
+  const bookingMsg = `Запись на замер (Окна-Центр, Лаборатория ремонта, Владивосток):\nИмя: ${name}\nТелефон: ${phone}\nЖелаемая дата: ${date || 'в ближайшее время'}\nАдрес/район: ${address || 'уточняется'}`;
+
+  const inputClass = "w-full px-3.5 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400 min-h-[44px] transition-colors";
 
   return (
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Вызов инженера-диагноста"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
+      aria-label="Обсудить утепление — вызов специалиста"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-md"
       onClick={onClose}
     >
       <div
-        className="bg-[#0F141C] border border-slate-800 rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative text-left"
+        className="bg-white border border-gray-200 rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative text-left"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2.5 rounded-lg bg-slate-800/80 text-slate-400 hover:text-white border border-slate-700 min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer"
+          className="absolute top-4 right-4 p-2.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-800 border border-gray-200 min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer transition-colors"
           aria-label="Закрыть окно"
         >
           <X className="w-5 h-5" />
@@ -70,25 +72,25 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
 
         {!submitted ? (
           <form onSubmit={handleSubmit} className="space-y-4">
-            
+
             <div className="flex items-center gap-3">
-              <div className="p-3 rounded-xl bg-orange-500/10 text-orange-400 border border-orange-500/20">
-                <ThermometerSnowflake className="w-6 h-6" />
+              <div className="p-3 rounded-xl bg-sky-50 text-sky-500 border border-sky-100">
+                <Square className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white">Вызов специалиста на замер</h3>
-                <p className="text-xs text-slate-400">С тепловизором во Владивостоке</p>
+                <h3 className="text-xl font-bold text-gray-900">Обсудить утепление</h3>
+                <p className="text-xs text-gray-500">Выезд специалиста во Владивостоке</p>
               </div>
             </div>
 
-            <p className="text-xs text-slate-300 leading-relaxed pt-2">
+            <p className="text-sm text-gray-600 leading-relaxed pt-1">
               Специалист проведет осмотр фасадного остекления, выявит зоны промерзания, снимет точные размеры стоек и подготовит смету без посредников.
             </p>
 
-            <div className="space-y-3 pt-2">
+            <div className="space-y-3 pt-1">
               <div>
-                <label className="text-xs font-semibold text-slate-300 block mb-1">
-                  Ваше имя <span className="text-orange-500">*</span>
+                <label className="text-xs font-semibold text-gray-700 block mb-1.5">
+                  Ваше имя <span className="text-sky-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -96,13 +98,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Как к вам обращаться"
-                  className="w-full px-3.5 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 min-h-[44px]"
+                  className={inputClass}
                 />
               </div>
 
               <div>
-                <label className="text-xs font-semibold text-slate-300 block mb-1">
-                  Номер телефона <span className="text-orange-500">*</span>
+                <label className="text-xs font-semibold text-gray-700 block mb-1.5">
+                  Номер телефона <span className="text-sky-500">*</span>
                 </label>
                 <input
                   type="tel"
@@ -110,25 +112,25 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                   value={phone}
                   onChange={handlePhoneChange}
                   placeholder="+7 (___) ___-__-__"
-                  className="w-full px-3.5 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm font-mono focus:outline-none focus:ring-2 focus:ring-orange-500 min-h-[44px]"
+                  className={`${inputClass} font-mono`}
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs font-semibold text-slate-300 block mb-1">
+                  <label className="text-xs font-semibold text-gray-700 block mb-1.5">
                     Желаемая дата
                   </label>
                   <input
                     type="date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="w-full px-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-xs focus:outline-none focus:ring-2 focus:ring-orange-500 min-h-[44px]"
+                    className={inputClass}
                   />
                 </div>
 
                 <div>
-                  <label className="text-xs font-semibold text-slate-300 block mb-1">
+                  <label className="text-xs font-semibold text-gray-700 block mb-1.5">
                     Адрес / Район
                   </label>
                   <input
@@ -136,34 +138,33 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                     placeholder="ул. Ильичева..."
-                    className="w-full px-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-xs focus:outline-none focus:ring-2 focus:ring-orange-500 min-h-[44px]"
+                    className={inputClass}
                   />
                 </div>
               </div>
             </div>
 
-            <div className="pt-3">
+            <div className="pt-2">
               <button
                 type="submit"
-                className="w-full py-3.5 px-4 bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg shadow-orange-600/30 transition-all flex items-center justify-center gap-2 min-h-[44px] cursor-pointer"
+                className="w-full py-3.5 px-4 bg-sky-500 hover:bg-sky-600 text-white font-bold text-sm rounded-xl shadow-md shadow-sky-500/25 transition-all flex items-center justify-center gap-2 min-h-[44px] cursor-pointer"
               >
                 <Send className="w-4 h-4" />
                 Сформировать заявку на замер
               </button>
             </div>
 
-            <p className="text-[11px] text-slate-500 text-center">
+            <p className="text-[11px] text-gray-400 text-center">
               Выезд специалиста по Владивостоку согласовывается по телефону
             </p>
-
           </form>
         ) : (
-          <div className="space-y-5 text-left animate-in fade-in duration-200">
-            <div className="flex items-center gap-3 text-emerald-400">
+          <div className="space-y-5 text-left">
+            <div className="flex items-center gap-3 text-emerald-600">
               <CheckCircle2 className="w-8 h-8 shrink-0" />
               <div>
-                <h4 className="font-bold text-base text-white">Заявка на выезд сформирована!</h4>
-                <p className="text-xs text-slate-300">Свяжитесь напрямую с дежурным специалистом:</p>
+                <h4 className="font-bold text-base text-gray-900">Заявка на выезд сформирована!</h4>
+                <p className="text-xs text-gray-600">Свяжитесь напрямую с дежурным специалистом:</p>
               </div>
             </div>
 
@@ -172,7 +173,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                 href={`https://wa.me/79140722222?text=${encodeURIComponent(bookingMsg)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 min-h-[44px]"
+                className="w-full py-3.5 px-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2 min-h-[44px] shadow-md transition-all"
               >
                 <MessageSquare className="w-4 h-4" />
                 Отправить в WhatsApp (+7 914 072-22-22)
@@ -180,9 +181,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
 
               <a
                 href="tel:+79140722222"
-                className="w-full py-3.5 px-4 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 border border-slate-700 min-h-[44px]"
+                className="w-full py-3.5 px-4 bg-gray-50 hover:bg-gray-100 text-gray-700 font-bold text-sm rounded-xl flex items-center justify-center gap-2 border border-gray-200 min-h-[44px] transition-colors"
               >
-                <Phone className="w-4 h-4 text-orange-400" />
+                <Phone className="w-4 h-4 text-sky-500" />
                 Позвонить дежурному инженеру
               </a>
             </div>
@@ -192,7 +193,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                 setSubmitted(false);
                 onClose();
               }}
-              className="text-xs text-slate-400 hover:text-white underline w-full text-center block pt-2 cursor-pointer"
+              className="text-xs text-gray-400 hover:text-gray-700 underline w-full text-center block pt-1 cursor-pointer"
             >
               Закрыть окно
             </button>

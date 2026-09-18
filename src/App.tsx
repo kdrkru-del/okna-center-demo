@@ -37,7 +37,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0C1017] text-slate-100 flex flex-col selection:bg-orange-500 selection:text-white">
+    <div className="min-h-screen bg-white text-slate-800 flex flex-col selection:bg-sky-500 selection:text-white">
       {/* Navigation */}
       <Navbar onOpenBooking={() => setBookingModalOpen(true)} />
 

@@ -11,29 +11,29 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
   const getIcon = (id: string) => {
     switch (id) {
       case 'production':
-        return <Hammer className="w-6 h-6 text-orange-400" />;
+        return <Hammer className="w-6 h-6 text-sky-500" />;
       case 'sales':
-        return <ShoppingBag className="w-6 h-6 text-amber-400" />;
+        return <ShoppingBag className="w-6 h-6 text-sky-600" />;
       case 'installation':
-        return <Wrench className="w-6 h-6 text-emerald-400" />;
+        return <Wrench className="w-6 h-6 text-emerald-500" />;
       default:
-        return <Hammer className="w-6 h-6 text-orange-400" />;
+        return <Hammer className="w-6 h-6 text-sky-500" />;
     }
   };
 
   return (
-    <section id="services" className="py-20 lg:py-28 bg-[#0D131B] border-t border-slate-800 relative">
+    <section id="services" className="py-20 lg:py-28 bg-white border-t border-gray-100 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-700 text-xs font-bold uppercase tracking-wider">
             Наши услуги
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">
             Специализированные решения «Лаборатории ремонта»
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
+          <p className="text-gray-500 text-base sm:text-lg">
             Мы решаем системную проблему промерзания панорамных фасадов: от раскроя термокоробов до чистовой установки во Владивостоке.
           </p>
         </div>
@@ -43,44 +43,44 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
           {SERVICES.map((srv) => (
             <div
               key={srv.id}
-              className="bg-[#0F1622] border border-slate-800 hover:border-orange-500/50 rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 group"
+              className="bg-white border border-gray-200 hover:border-sky-300 rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:shadow-sky-100 group"
             >
               <div>
-                {/* Image with base URL helper */}
-                <div className="relative h-52 w-full overflow-hidden bg-slate-900">
+                {/* Image */}
+                <div className="relative h-52 w-full overflow-hidden bg-gray-100">
                   <img
                     src={getAssetUrl(srv.image)}
                     alt={srv.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F1622] via-transparent to-black/30" />
-                  
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/30 via-transparent to-transparent" />
+
                   {srv.badge && (
-                    <span className="absolute top-4 right-4 px-3 py-1 bg-black/80 backdrop-blur-md border border-white/10 text-orange-400 font-bold text-xs rounded-lg">
+                    <span className="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm border border-gray-200 text-sky-700 font-bold text-xs rounded-lg shadow-sm">
                       {srv.badge}
                     </span>
                   )}
 
-                  <div className="absolute bottom-3 left-4 p-2.5 rounded-xl bg-slate-900/90 border border-slate-700 shadow-md">
+                  <div className="absolute bottom-3 left-4 p-2.5 rounded-xl bg-white shadow-md border border-gray-100">
                     {getIcon(srv.id)}
                   </div>
                 </div>
 
-                {/* Body Content */}
+                {/* Body */}
                 <div className="p-6 space-y-4 text-left">
-                  <h3 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-sky-600 transition-colors">
                     {srv.title}
                   </h3>
-                  
-                  <p className="text-slate-300 text-sm leading-relaxed">
+
+                  <p className="text-gray-600 text-sm leading-relaxed">
                     {srv.fullDesc}
                   </p>
 
-                  {/* Bullet points */}
+                  {/* Features */}
                   <div className="pt-2 space-y-2">
                     {srv.features.map((f, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-xs text-slate-300">
-                        <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
+                      <div key={idx} className="flex items-start gap-2 text-xs text-gray-600">
+                        <CheckCircle2 className="w-4 h-4 text-sky-500 shrink-0 mt-0.5" />
                         <span>{f}</span>
                       </div>
                     ))}
@@ -88,55 +88,55 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                 </div>
               </div>
 
-              {/* Card Footer Button */}
+              {/* Card Footer */}
               <div className="p-6 pt-0">
                 <button
                   onClick={() => onSelectService(srv.title)}
-                  className="w-full py-3.5 px-4 bg-slate-800 hover:bg-orange-600 text-slate-200 hover:text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 group-hover:shadow-lg min-h-[44px] cursor-pointer"
+                  className="w-full py-3.5 px-4 bg-gray-50 hover:bg-sky-500 text-gray-700 hover:text-white border border-gray-200 hover:border-sky-500 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 min-h-[44px] cursor-pointer"
                 >
                   Заказать услугу
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Verified Engineering Advantages Matrix (no fabricated numbers) */}
-        <div className="mt-16 bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4 text-left">
+        {/* Engineering advantages */}
+        <div className="mt-16 bg-gray-50 border border-gray-200 rounded-2xl p-6 sm:p-8">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-200 pb-4 text-left">
             <div>
-              <h3 className="text-lg font-bold text-white">Инженерные особенности термокоробов</h3>
-              <p className="text-xs text-slate-400">Преимущества системы и совместимость с фасадными конструкциями</p>
+              <h3 className="text-lg font-bold text-gray-900">Инженерные особенности термокоробов</h3>
+              <p className="text-xs text-gray-500">Преимущества системы и совместимость с фасадными конструкциями</p>
             </div>
-            <span className="text-xs text-orange-400 font-mono font-bold bg-orange-500/10 px-3 py-1 rounded-md border border-orange-500/20">
+            <span className="text-xs text-sky-700 font-bold bg-sky-50 px-3 py-1 rounded-md border border-sky-200 whitespace-nowrap">
               «ОКНА-ЦЕНТР» ВЛАДИВОСТОК
             </span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6 text-left">
-            <div className="border-l-2 border-orange-500 pl-4 space-y-1">
-              <span className="text-xs text-slate-400 uppercase font-mono">Терморазрыв</span>
-              <div className="text-base font-bold text-white">Эффект термоса</div>
-              <p className="text-[11px] text-slate-400">Отсекает мостики холода по всей высоте стойки</p>
+            <div className="border-l-2 border-sky-400 pl-4 space-y-1">
+              <span className="text-xs text-gray-400 uppercase font-semibold tracking-wide">Терморазрыв</span>
+              <div className="text-base font-bold text-gray-900">Эффект термоса</div>
+              <p className="text-[11px] text-gray-500">Отсекает мостики холода по всей высоте стойки</p>
             </div>
 
-            <div className="border-l-2 border-amber-500 pl-4 space-y-1">
-              <span className="text-xs text-slate-400 uppercase font-mono">Геометрия</span>
-              <div className="text-base font-bold text-white">Индивидуальный раскрой</div>
-              <p className="text-[11px] text-slate-400">Подбор формы короба под вашу профильную систему</p>
+            <div className="border-l-2 border-sky-300 pl-4 space-y-1">
+              <span className="text-xs text-gray-400 uppercase font-semibold tracking-wide">Геометрия</span>
+              <div className="text-base font-bold text-gray-900">Индивидуальный раскрой</div>
+              <p className="text-[11px] text-gray-500">Подбор формы короба под вашу профильную систему</p>
             </div>
 
-            <div className="border-l-2 border-emerald-500 pl-4 space-y-1">
-              <span className="text-xs text-slate-400 uppercase font-mono">Эстетика</span>
-              <div className="text-base font-bold text-white">Широкая палитра цветов</div>
-              <p className="text-[11px] text-slate-400">Базовый белый, антрацит, ламинация под дерево</p>
+            <div className="border-l-2 border-emerald-400 pl-4 space-y-1">
+              <span className="text-xs text-gray-400 uppercase font-semibold tracking-wide">Эстетика</span>
+              <div className="text-base font-bold text-gray-900">Широкая палитра цветов</div>
+              <p className="text-[11px] text-gray-500">Базовый белый, антрацит, ламинация под дерево</p>
             </div>
 
-            <div className="border-l-2 border-cyan-500 pl-4 space-y-1">
-              <span className="text-xs text-slate-400 uppercase font-mono">Монтаж</span>
-              <div className="text-base font-bold text-white">Без демонтажа фасада</div>
-              <p className="text-[11px] text-slate-400">Чистая установка с сохранением ремонта в квартире</p>
+            <div className="border-l-2 border-sky-200 pl-4 space-y-1">
+              <span className="text-xs text-gray-400 uppercase font-semibold tracking-wide">Монтаж</span>
+              <div className="text-base font-bold text-gray-900">Без демонтажа фасада</div>
+              <p className="text-[11px] text-gray-500">Чистая установка с сохранением ремонта в квартире</p>
             </div>
           </div>
         </div>

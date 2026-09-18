@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Flame, Menu, X, ShieldCheck, MessageSquare } from 'lucide-react';
+import { Phone, Menu, X, ShieldCheck, MessageSquare, Square } from 'lucide-react';
 import { COMPANY_INFO } from '../data/content';
 
 interface NavbarProps {
@@ -32,7 +32,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
   const navLinks = [
     { name: 'О проблеме', href: '#problem' },
     { name: 'Услуги', href: '#services' },
-    { name: 'Параметры остекления', href: '#calculator' },
+    { name: 'Параметры', href: '#calculator' },
     { name: 'Технология', href: '#methodology' },
     { name: 'Наши работы', href: '#gallery' },
     { name: 'Отзывы', href: '#reviews' },
@@ -47,67 +47,67 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#0B0F14]/95 backdrop-blur-md border-b border-slate-800 shadow-2xl py-3'
-          : 'bg-[#0B0F14]/75 backdrop-blur-sm border-b border-white/5 py-4'
+          ? 'bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm py-3'
+          : 'bg-white/80 backdrop-blur-sm border-b border-gray-100 py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo & Lab Branding */}
+          {/* Logo */}
           <a
             href="#"
-            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-lg p-1"
+            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded-lg p-1"
             aria-label="ОКНА-ЦЕНТР Лаборатория ремонта - главная страница"
           >
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center text-white shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform shrink-0">
-              <Flame className="w-6 h-6" />
+            <div className="w-10 h-10 rounded-lg bg-sky-500 flex items-center justify-center text-white shadow-md shadow-sky-500/25 group-hover:bg-sky-600 transition-colors shrink-0">
+              <Square className="w-5 h-5" />
             </div>
             <div className="flex flex-col text-left">
               <div className="flex items-center gap-2">
-                <span className="font-extrabold tracking-tight text-white text-base sm:text-lg lg:text-xl">
+                <span className="font-extrabold tracking-tight text-gray-900 text-base sm:text-lg">
                   ОКНА-ЦЕНТР
                 </span>
-                <span className="hidden sm:inline-block px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider bg-orange-500/10 text-orange-400 border border-orange-500/20 rounded">
-                  20+ лет опыта
+                <span className="hidden sm:inline-block px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider bg-sky-50 text-sky-600 border border-sky-200 rounded">
+                  20+ лет
                 </span>
               </div>
-              <span className="text-[11px] sm:text-xs text-slate-400 font-medium tracking-wide">
+              <span className="text-[11px] sm:text-xs text-gray-500 font-medium tracking-wide">
                 Лаборатория ремонта • Владивосток
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center gap-6" aria-label="Основное меню">
+          <nav className="hidden xl:flex items-center gap-5" aria-label="Основное меню">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-slate-300 hover:text-orange-400 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded px-1"
+                className="text-sm font-medium text-gray-600 hover:text-sky-600 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded px-1"
               >
                 {link.name}
               </a>
             ))}
           </nav>
 
-          {/* Quick Actions / Contacts */}
+          {/* Quick Actions */}
           <div className="hidden md:flex items-center gap-4">
             <div className="flex flex-col items-end text-right">
               <a
                 href="tel:+79140722222"
-                className="text-sm font-bold text-white hover:text-orange-400 transition-colors flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded"
+                className="text-sm font-bold text-gray-800 hover:text-sky-600 transition-colors flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded"
               >
-                <Phone className="w-3.5 h-3.5 text-orange-500" />
+                <Phone className="w-3.5 h-3.5 text-sky-500" />
                 +7 (914) 072-22-22
               </a>
-              <span className="text-[11px] text-slate-400">Владивосток • 09:00–19:00</span>
+              <span className="text-[11px] text-gray-400">Владивосток • 09:00–19:00</span>
             </div>
 
             <button
               onClick={onOpenBooking}
-              className="inline-flex items-center justify-center px-4 py-2 text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 rounded-lg shadow-lg shadow-orange-600/25 hover:shadow-orange-600/40 transition-all active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 cursor-pointer"
+              className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-sky-500 hover:bg-sky-600 rounded-xl shadow-md shadow-sky-500/25 hover:shadow-sky-500/40 transition-all active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 cursor-pointer"
             >
-              Вызвать инженера
+              Обсудить утепление
             </button>
           </div>
 
@@ -115,14 +115,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           <div className="flex items-center gap-2 xl:hidden">
             <button
               onClick={onOpenBooking}
-              className="md:hidden px-3 py-2 text-xs font-bold uppercase tracking-wider text-white bg-orange-600 rounded-lg shadow-sm min-h-[44px] flex items-center justify-center"
-              aria-label="Заказать замер"
+              className="md:hidden px-3 py-2 text-sm font-bold text-white bg-sky-500 hover:bg-sky-600 rounded-xl min-h-[44px] flex items-center justify-center transition-colors"
+              aria-label="Обсудить утепление"
             >
               Замер
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 min-h-[44px] min-w-[44px] flex items-center justify-center"
+              className="p-2.5 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? 'Закрыть меню' : 'Открыть меню'}
             >
@@ -134,42 +134,42 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 
       {/* Mobile Dropdown Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-[#0F141C] border-b border-slate-800 px-4 pt-4 pb-6 shadow-2xl animate-in slide-in-from-top-2 duration-200">
-          <nav className="flex flex-col gap-2" aria-label="Мобильное меню">
+        <div className="xl:hidden bg-white border-b border-gray-200 px-4 pt-4 pb-6 shadow-lg">
+          <nav className="flex flex-col gap-1" aria-label="Мобильное меню">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={handleLinkClick}
-                className="text-base font-medium text-slate-200 hover:text-orange-400 py-2.5 px-2 border-b border-slate-800/60 flex items-center justify-between"
+                className="text-base font-medium text-gray-700 hover:text-sky-600 hover:bg-sky-50 py-2.5 px-3 rounded-lg border-b border-gray-100 flex items-center justify-between transition-colors"
               >
                 <span>{link.name}</span>
-                <span className="text-slate-600 text-sm">→</span>
+                <span className="text-gray-300 text-sm">→</span>
               </a>
             ))}
           </nav>
 
-          <div className="mt-5 pt-4 border-t border-slate-800 flex flex-col gap-3">
-            <div className="flex items-center justify-between text-xs text-slate-400">
+          <div className="mt-5 pt-4 border-t border-gray-100 flex flex-col gap-3">
+            <div className="flex items-center justify-between text-xs text-gray-500">
               <span>Владивосток, ул. Ильичева 29</span>
-              <span className="text-emerald-400 flex items-center gap-1">
+              <span className="text-emerald-600 flex items-center gap-1 font-semibold">
                 <ShieldCheck className="w-3.5 h-3.5" /> На связи
               </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-2 mt-2">
+            <div className="grid grid-cols-2 gap-2 mt-1">
               <a
                 href="tel:+79140722222"
-                className="flex items-center justify-center gap-2 py-3 px-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-semibold min-h-[44px]"
+                className="flex items-center justify-center gap-2 py-3 px-3 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-xl text-sm font-semibold min-h-[44px] transition-colors"
               >
-                <Phone className="w-4 h-4 text-orange-400" />
+                <Phone className="w-4 h-4 text-sky-500" />
                 Позвонить
               </a>
               <a
                 href={COMPANY_INFO.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 py-3 px-3 bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 border border-emerald-500/30 rounded-lg text-xs font-semibold min-h-[44px]"
+                className="flex items-center justify-center gap-2 py-3 px-3 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 rounded-xl text-sm font-semibold min-h-[44px] transition-colors"
               >
                 <MessageSquare className="w-4 h-4" />
                 WhatsApp
@@ -181,9 +181,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="w-full mt-2 py-3.5 bg-gradient-to-r from-orange-600 to-amber-600 text-white font-bold rounded-lg text-sm shadow-lg shadow-orange-600/30 min-h-[44px] cursor-pointer"
+              className="w-full mt-1 py-3.5 bg-sky-500 hover:bg-sky-600 text-white font-bold rounded-xl text-sm shadow-md min-h-[44px] cursor-pointer transition-colors"
             >
-              Вызвать инженера на замер
+              Обсудить утепление
             </button>
           </div>
         </div>
