@@ -29,6 +29,16 @@
           'Почему промерзает фасад', 'Простое и элегантное инженерное решение'
         ];
         const clean = () => {
+          document.querySelectorAll('button').forEach((button) => {
+            if (button.textContent.trim() === 'Замер') {
+              const phone = document.createElement('a');
+              phone.href = 'tel:+79140722222';
+              phone.className = button.className.replace('text-white', 'text-sky-700').replace('bg-sky-500', 'bg-sky-50');
+              phone.setAttribute('aria-label', 'Позвонить по номеру +7 (914) 072-22-22');
+              phone.textContent = '+7 (914) 072-22-22';
+              button.replaceWith(phone);
+            }
+          });
           document.querySelectorAll('div, span').forEach((el) => {
             const text = el.textContent.trim();
             if (removeLabels.includes(text)) el.remove();
