@@ -26,10 +26,10 @@
  const clean=()=>{
   document.getElementById('calculator')?.remove();
   document.querySelector('[data-price-note]')?.remove();
-  document.querySelector('[data-price-badge]')?.closest('header')?.querySelector('[data-price-badge]')?.remove();
-  const caption=[...document.querySelectorAll('p')].find(el=>el.textContent.trim()==='Панорамный фасад • Владивосток')?.parentElement;
-  if(caption&&!caption.querySelector('[data-price-badge]')){
-   const badge=document.createElement('div');badge.dataset.priceBadge='true';badge.className='mt-2 pt-2 border-t border-gray-100 text-[11px] font-bold text-sky-600';badge.textContent='от 4 900 ₽ · материалы и работа / пог. м';caption.appendChild(badge);
+  const caption=[...document.querySelectorAll('p')].find(el=>el.textContent.trim()==='Панорамный фасад • Владивосток');
+  const card=caption?.closest('.group') || caption?.parentElement?.parentElement;
+  if(card&&card.parentElement&&!card.parentElement.querySelector('[data-price-badge]')){
+   const badge=document.createElement('div');badge.dataset.priceBadge='true';badge.className='mt-5 inline-flex items-center rounded-full border border-sky-200 bg-sky-50 px-3 py-2 text-[11px] font-bold text-sky-700';badge.textContent='от 4 900 ₽ · материалы и работа / пог. м';card.parentElement.insertBefore(badge,card.nextSibling);
   }
   document.querySelectorAll('button').forEach(b=>{if(b.textContent.trim()==='Замер'){const a=document.createElement('a');a.href='tel:+79140722222';a.className='md:hidden inline-flex items-center gap-1 px-2 py-2 text-xs font-bold text-sky-700 bg-sky-50 border border-sky-200 rounded-lg min-h-[40px] whitespace-nowrap';a.textContent='+7 914 072-22-22';b.replaceWith(a);}});
   document.querySelectorAll('label').forEach(label=>{const t=label.textContent.trim();if(['Email (для отправки сметы)','Тип объекта','Удобный способ связи','Комментарий / Адрес во Владивостоке'].includes(t))label.parentElement?.remove();});
