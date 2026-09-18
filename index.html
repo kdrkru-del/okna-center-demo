@@ -1,68 +1,70 @@
 <!doctype html>
 <html lang="ru" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/okna-center-demo/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>«ОКНА-ЦЕНТР» Лаборатория ремонта | Утепление и шумоизоляция алюминиевого остекления во Владивостоке</title>
-    <meta name="description" content="Утепление и шумоизоляция панорамных алюминиевых фасадов термокоробами от «ОКНА-ЦЕНТР». Ликвидация наледи, конденсата и сквозняков без демонтажа остекления." />
-    <meta name="keywords" content="утепление и шумоизоляция алюминиевых окон, термокороба, панорамное остекление, окна центр владивосток" />
-    <meta property="og:title" content="«ОКНА-ЦЕНТР» Лаборатория ремонта | Утепление и шумоизоляция алюминиевого остекления" />
-    <meta property="og:description" content="Утепление и шумоизоляция панорамных фасадов и лоджий термокоробами без демонтажа остекления. Владивосток." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/okna-center-demo/images/hero/vladivostok-real-window.jpg" />
-    <meta name="theme-color" content="#ffffff" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/okna-center-demo/assets/index-CEkKotRM.js"></script>
-    <link rel="stylesheet" crossorigin href="/okna-center-demo/assets/index-DmkBsLIK.css">
-  </head>
-  <body class="bg-white text-gray-800 antialiased overflow-x-hidden">
-    <div id="root"></div>
-    <script>
-      (() => {
-        const removeLabels = ['Лаборатория ремонта «ОКНА-ЦЕНТР»', 'Философия алюминиевого остекления', 'База знаний • Экспертиза', 'Наши услуги', 'О компании', 'Подбор параметров', 'Фото работ', 'Отзывы клиентов', 'Контакты и заявка', 'Комплексный подход', 'Почему промерзает фасад', 'Простое и элегантное инженерное решение'];
-        const replaceText = [['Утепление алюминиевого остекления', 'Утепление и шумоизоляция алюминиевого остекления'], ['Обсудить утепление', 'Обсудить утепление и шумоизоляцию'], ['утепление алюминиевого остекления', 'утепление и шумоизоляция алюминиевого остекления'], ['Утепление угловой лоджии', 'Утепление и шумоизоляция угловой лоджии'], ['Утепление и шумоизоляция в одном решении', 'Утепление, шумоизоляция']];
-        const clean = () => {
-          document.getElementById('calculator')?.remove();
-          const services = document.getElementById('services');
-          if (services && !services.querySelector('[data-price-note]')) {
-            const note = document.createElement('div');
-            note.dataset.priceNote = 'true';
-            note.className = 'mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-2xl border border-sky-200 bg-sky-50 p-5 text-left';
-            note.innerHTML = '<div><p class="text-sm font-bold text-gray-900">Утепление, шумоизоляция</p><p class="mt-1 text-sm text-gray-600">Материал и работа — от 4 900 ₽ за погонный метр. Точная стоимость после замера.</p></div><a href="#contacts" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-sky-500 px-4 py-3 text-sm font-bold text-white">Обсудить задачу →</a>';
-            services.appendChild(note);
-          }
-          document.querySelectorAll('button').forEach((button) => {
-            if (button.textContent.trim() === 'Замер') {
-              const phone = document.createElement('a');
-              phone.href = 'tel:+79140722222';
-              phone.className = 'md:hidden inline-flex items-center gap-1 px-2 py-2 text-xs font-bold text-sky-700 bg-sky-50 hover:bg-sky-100 border border-sky-200 rounded-lg min-h-[40px] transition-colors whitespace-nowrap';
-              phone.setAttribute('aria-label', 'Позвонить по номеру +7 (914) 072-22-22');
-              phone.innerHTML = '<span aria-hidden="true">☎</span> +7 914 072-22-22';
-              button.replaceWith(phone);
-            }
-          });
-          const walker = document.createTreeWalker(document.getElementById('root'), NodeFilter.SHOW_TEXT);
-          const nodes = [];
-          while (walker.nextNode()) nodes.push(walker.currentNode);
-          nodes.forEach((node) => {
-            let value = node.nodeValue;
-            replaceText.forEach(([from, to]) => { value = value.split(from).join(to); });
-            value = value.replace(/шумоизоляцию( и шумоизоляцию)+/g, 'шумоизоляцию').replace(/шумоизоляция( и шумоизоляция)+/g, 'шумоизоляция');
-            if (value !== node.nodeValue) node.nodeValue = value;
-          });
-          document.querySelectorAll('div, span').forEach((el) => {
-            const text = el.textContent.trim();
-            if (removeLabels.includes(text)) el.remove();
-            if (/^0[1-5]$/.test(text)) el.textContent = '→';
-            if (/^Шаг\s+\d+\s+из\s+5$/.test(text)) el.remove();
-          });
-        };
-        new MutationObserver(clean).observe(document.getElementById('root'), { childList: true, subtree: true });
-        clean();
-      })();
-    </script>
-  </body>
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/svg+xml" href="/okna-center-demo/favicon.svg" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>«ОКНА-ЦЕНТР» Лаборатория ремонта | Утепление и шумоизоляция алюминиевого остекления во Владивостоке</title>
+<meta name="description" content="Утепление и шумоизоляция панорамных алюминиевых фасадов термокоробами от «ОКНА-ЦЕНТР». Ликвидация наледи, конденсата и сквозняков без демонтажа остекления." />
+<meta name="keywords" content="утепление и шумоизоляция алюминиевых окон, термокороба, панорамное остекление, окна центр владивосток" />
+<meta property="og:title" content="«ОКНА-ЦЕНТР» Лаборатория ремонта | Утепление и шумоизоляция алюминиевого остекления" />
+<meta property="og:description" content="Утепление и шумоизоляция панорамных фасадов и лоджий термокоробами без демонтажа остекления. Владивосток." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="/okna-center-demo/images/hero/vladivostok-real-window.jpg" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<script type="module" crossorigin src="/okna-center-demo/assets/index-CEkKotRM.js"></script>
+<link rel="stylesheet" crossorigin href="/okna-center-demo/assets/index-DmkBsLIK.css">
+</head>
+<body class="bg-white text-gray-800 antialiased overflow-x-hidden">
+<div id="root"></div>
+<script>
+(() => {
+  const removeLabels = ['Лаборатория ремонта «ОКНА-ЦЕНТР»','Философия алюминиевого остекления','База знаний • Экспертиза','Наши услуги','О компании','Подбор параметров','Фото работ','Отзывы клиентов','Контакты и заявка','Комплексный подход','Почему промерзает фасад','Простое и элегантное инженерное решение','Написать инженеру в WhatsApp →'];
+  const replaceText = [['Утепление алюминиевого остекления','Утепление и шумоизоляция алюминиевого остекления'],['Обсудить утепление','Обсудить утепление и шумоизоляцию'],['утепление алюминиевого остекления','утепление и шумоизоляция алюминиевого остекления'],['Утепление угловой лоджии','Утепление и шумоизоляция угловой лоджии'],['Утепление и шумоизоляция в одном решении','Утепление, шумоизоляция'],['Написать в WhatsApp (+7 914 072-22-22)','Написать в WhatsApp']];
+  const clean = () => {
+    document.getElementById('calculator')?.remove();
+    document.querySelector('[data-price-note]')?.remove();
+    const headerRow = document.querySelector('header > div > div');
+    if (headerRow && !headerRow.querySelector('[data-price-badge]')) {
+      const badge = document.createElement('div');
+      badge.dataset.priceBadge = 'true';
+      badge.className = 'hidden sm:flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3 py-1.5 text-xs font-bold text-sky-700 whitespace-nowrap';
+      badge.innerHTML = '<span class="text-sky-500">от 4 900 ₽</span><span class="font-medium text-sky-600">материалы и работа / пог. м</span>';
+      const nav = headerRow.querySelector('nav');
+      headerRow.insertBefore(badge, nav || headerRow.lastElementChild);
+    }
+    document.querySelectorAll('button').forEach((button) => {
+      if (button.textContent.trim() === 'Замер') {
+        const phone = document.createElement('a');
+        phone.href = 'tel:+79140722222';
+        phone.className = 'md:hidden inline-flex items-center gap-1 px-2 py-2 text-xs font-bold text-sky-700 bg-sky-50 hover:bg-sky-100 border border-sky-200 rounded-lg min-h-[40px] transition-colors whitespace-nowrap';
+        phone.setAttribute('aria-label', 'Позвонить по номеру +7 (914) 072-22-22');
+        phone.innerHTML = '<span aria-hidden="true">☎</span> +7 914 072-22-22';
+        button.replaceWith(phone);
+      }
+    });
+    const walker = document.createTreeWalker(document.getElementById('root'), NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach((node) => {
+      let value = node.nodeValue;
+      replaceText.forEach(([from,to]) => { value = value.split(from).join(to); });
+      value = value.replace(/шумоизоляцию( и шумоизоляцию)+/g,'шумоизоляцию').replace(/шумоизоляция( и шумоизоляция)+/g,'шумоизоляция');
+      if (value !== node.nodeValue) node.nodeValue = value;
+    });
+    document.querySelectorAll('div,span,a').forEach((el) => {
+      const text = el.textContent.trim();
+      if (removeLabels.includes(text)) el.remove();
+      if (/^0[1-5]$/.test(text)) el.textContent = '→';
+      if (/^Шаг\s+\d+\s+из\s+5$/.test(text)) el.remove();
+    });
+  };
+  new MutationObserver(clean).observe(document.getElementById('root'), {childList:true,subtree:true});
+  clean();
+})();
+</script>
+</body>
 </html>
