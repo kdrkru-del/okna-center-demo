@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>«ОКНА-ЦЕНТР» Лаборатория ремонта | Утепление и шумоизоляция алюминиевого остекления во Владивостоке</title>
 <meta name="description" content="Утепление и шумоизоляция панорамных алюминиевых фасадов термокоробами от «ОКНА-ЦЕНТР». Ликвидация наледи, конденсата и сквозняков без демонтажа остекления." />
-<meta name="keywords" content="утепление и шумоизоляция алюминиевых окон, термокороба, панорамное остекление, окна центр владивосток" />
 <meta property="og:title" content="«ОКНА-ЦЕНТР» Лаборатория ремонта | Утепление и шумоизоляция алюминиевого остекления" />
 <meta property="og:description" content="Утепление и шумоизоляция панорамных фасадов и лоджий термокоробами без демонтажа остекления. Владивосток." />
 <meta property="og:type" content="website" />
@@ -27,15 +26,13 @@
  const clean=()=>{
   document.getElementById('calculator')?.remove();
   document.querySelector('[data-price-note]')?.remove();
-  const header = document.querySelector('header > div');
-  if(header && !header.querySelector('[data-price-badge]')){
-   const badge=document.createElement('div'); badge.dataset.priceBadge='true';
-   badge.className='mt-2 flex items-center justify-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3 py-1.5 text-[11px] font-bold text-sky-700 whitespace-nowrap';
-   badge.innerHTML='<span class="text-sky-500">от 4 900 ₽</span><span class="font-medium text-sky-600">материалы и работа / пог. м</span>';
-   header.appendChild(badge);
+  document.querySelector('[data-price-badge]')?.closest('header')?.querySelector('[data-price-badge]')?.remove();
+  const caption=[...document.querySelectorAll('p')].find(el=>el.textContent.trim()==='Панорамный фасад • Владивосток')?.parentElement;
+  if(caption&&!caption.querySelector('[data-price-badge]')){
+   const badge=document.createElement('div');badge.dataset.priceBadge='true';badge.className='mt-2 pt-2 border-t border-gray-100 text-[11px] font-bold text-sky-600';badge.textContent='от 4 900 ₽ · материалы и работа / пог. м';caption.appendChild(badge);
   }
   document.querySelectorAll('button').forEach(b=>{if(b.textContent.trim()==='Замер'){const a=document.createElement('a');a.href='tel:+79140722222';a.className='md:hidden inline-flex items-center gap-1 px-2 py-2 text-xs font-bold text-sky-700 bg-sky-50 border border-sky-200 rounded-lg min-h-[40px] whitespace-nowrap';a.textContent='+7 914 072-22-22';b.replaceWith(a);}});
-  document.querySelectorAll('label').forEach(label=>{const t=label.textContent.trim();if(['Email (для отправки сметы)','Тип объекта','Удобный способ связи','Комментарий / Адрес во Владивостоке'].includes(t)) label.parentElement?.remove();});
+  document.querySelectorAll('label').forEach(label=>{const t=label.textContent.trim();if(['Email (для отправки сметы)','Тип объекта','Удобный способ связи','Комментарий / Адрес во Владивостоке'].includes(t))label.parentElement?.remove();});
   const walker=document.createTreeWalker(document.getElementById('root'),NodeFilter.SHOW_TEXT),nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
   nodes.forEach(node=>{let v=node.nodeValue;replaceText.forEach(([from,to])=>{v=v.split(from).join(to);});v=v.replace(/шумоизоляцию( и шумоизоляцию)+/g,'шумоизоляцию').replace(/шумоизоляция( и шумоизоляция)+/g,'шумоизоляция');if(v!==node.nodeValue)node.nodeValue=v;});
   document.querySelectorAll('div,span,a').forEach(el=>{const t=el.textContent.trim();if(removeLabels.includes(t))el.remove();if(/^0[1-5]$/.test(t))el.textContent='→';if(/^Шаг\s+\d+\s+из\s+5$/.test(t))el.remove();});
