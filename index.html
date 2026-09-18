@@ -33,9 +33,9 @@
             if (button.textContent.trim() === 'Замер') {
               const phone = document.createElement('a');
               phone.href = 'tel:+79140722222';
-              phone.className = button.className.replace('text-white', 'text-sky-700').replace('bg-sky-500', 'bg-sky-50');
+              phone.className = 'md:hidden inline-flex items-center gap-1 px-2 py-2 text-xs font-bold text-sky-700 bg-sky-50 hover:bg-sky-100 border border-sky-200 rounded-lg min-h-[40px] transition-colors whitespace-nowrap';
               phone.setAttribute('aria-label', 'Позвонить по номеру +7 (914) 072-22-22');
-              phone.textContent = '+7 (914) 072-22-22';
+              phone.innerHTML = '<span aria-hidden="true">☎</span> +7 914 072-22-22';
               button.replaceWith(phone);
             }
           });
