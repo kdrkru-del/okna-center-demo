@@ -29,6 +29,7 @@
           'Почему промерзает фасад', 'Простое и элегантное инженерное решение'
         ];
         const clean = () => {
+          document.getElementById('calculator')?.remove();
           document.querySelectorAll('button').forEach((button) => {
             if (button.textContent.trim() === 'Замер') {
               const phone = document.createElement('a');
