@@ -7,14 +7,10 @@
     <title>«ОКНА-ЦЕНТР» Лаборатория ремонта | Утепление фасадного алюминиевого остекления термокоробами во Владивостоке</title>
     <meta name="description" content="Инновационное утепление промерзающих панорамных алюминиевых фасадов термокоробами от «ОКНА-ЦЕНТР». Ликвидация наледи, конденсата и сквозняков без демонтажа остекления. 20+ лет опыта. Тепловизионная диагностика во Владивостоке." />
     <meta name="keywords" content="утепление алюминиевых окон, термокороба, панорамное остекление, окна центр владивосток, промерзание окон, терморазрыв, ремонт окон владивосток" />
-    
-    <!-- Open Graph -->
     <meta property="og:title" content="«ОКНА-ЦЕНТР» Лаборатория ремонта | Утепление алюминиевого остекления" />
     <meta property="og:description" content="Ликвидация промерзания панорамных фасадов и лоджий термокоробами без демонтажа остекления. Владивосток, 20+ лет опыта." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/okna-center-demo/images/hero/vladivostok-real-window.jpg" />
-    
-    <!-- Theme & Color -->
     <meta name="theme-color" content="#ffffff" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,5 +20,25 @@
   </head>
   <body class="bg-white text-gray-800 antialiased overflow-x-hidden">
     <div id="root"></div>
+    <script>
+      (() => {
+        const removeLabels = [
+          'Лаборатория ремонта «ОКНА-ЦЕНТР»', 'Философия алюминиевого остекления',
+          'База знаний • Экспертиза', 'Наши услуги', 'О компании', 'Подбор параметров',
+          'Фото работ', 'Отзывы клиентов', 'Контакты и заявка', 'Комплексный подход',
+          'Почему промерзает фасад', 'Простое и элегантное инженерное решение'
+        ];
+        const clean = () => {
+          document.querySelectorAll('div, span').forEach((el) => {
+            const text = el.textContent.trim();
+            if (removeLabels.includes(text)) el.remove();
+            if (/^0[1-5]$/.test(text)) el.textContent = '→';
+            if (/^Шаг\s+\d+\s+из\s+5$/.test(text)) el.remove();
+          });
+        };
+        new MutationObserver(clean).observe(document.getElementById('root'), { childList: true, subtree: true });
+        clean();
+      })();
+    </script>
   </body>
 </html>
