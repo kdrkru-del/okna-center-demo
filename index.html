@@ -30,6 +30,14 @@
         ];
         const clean = () => {
           document.getElementById('calculator')?.remove();
+          const services = document.getElementById('services');
+          if (services && !services.querySelector('[data-price-note]')) {
+            const note = document.createElement('div');
+            note.dataset.priceNote = 'true';
+            note.className = 'mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-2xl border border-sky-200 bg-sky-50 p-5 text-left';
+            note.innerHTML = '<div><p class="text-sm font-bold text-gray-900">Утепление и шумоизоляция в одном решении</p><p class="mt-1 text-sm text-gray-600">Материал и работа — от 4 900 ₽ за погонный метр. Точная стоимость после замера.</p></div><a href="#contacts" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-sky-500 px-4 py-3 text-sm font-bold text-white">Обсудить задачу →</a>';
+            services.appendChild(note);
+          }
           document.querySelectorAll('button').forEach((button) => {
             if (button.textContent.trim() === 'Замер') {
               const phone = document.createElement('a');
